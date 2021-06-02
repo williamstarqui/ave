@@ -285,7 +285,7 @@ return [
         //     'icon' => 'fas fa-fw fa-lock',
         // ],
         [
-            'text'    => 'Almacén',
+            'text'    => 'Almacén de insumos',
             'icon'    => 'nav-icon fas fa-warehouse',
             'submenu' => [
                 [
@@ -320,6 +320,24 @@ return [
                 [
                     'text' => 'Salida de insumos',
                     'icon' => 'nav-icon fas fa-share-square',
+                    'url'  => '#',
+                ],
+            ],
+        ],
+        ['header' => 'Ajustes'],
+        [
+            'text'    => 'Config. del sistema',
+            'icon'    => 'nav-icon fas fa-tools',
+            'submenu' => [
+                [
+                    'text' => 'Gestión de usuarios',
+                    'icon' => 'nav-icon fas fa-users',
+                    'url'  => '#',
+                ],
+                
+                [
+                    'text' => 'Backup DB',
+                    'icon' => 'nav-icon fas fa-database',
                     'url'  => '#',
                 ],
             ],
