@@ -11,10 +11,29 @@
 |
 */
 
+use App\Http\Controllers\PdfController;
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Route::get('/proveedor', function () {
+//     return view('proveedor.index');
 
+// });
+
+// Route::get('/proveedor/nuevo', function () {
+//     return view('proveedor.create');
+// });
+
+Route::resource('/proveedor', 'Proveedor\ProveedorController');
+Route::resource('/pago'    , 'Pago\PagoController');
+Route::get('/pdf','PdfController@PDF')->name('descargar');
+Auth::routes();
+Route::get('/proveedor/nuevo', 'Proveedor\ProveedorController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+// Route::resource('photos', 'PhotoController')->names([
+//     'create' => 'photos.build'
+// ]);

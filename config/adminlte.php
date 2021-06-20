@@ -249,11 +249,12 @@ return [
         ['header' => 'Inicio'],
         [
             'text'        => 'Dashboard',
-            'url'         => 'admin/pages',
             'icon'        => 'nav-icon fas fa-tachometer-alt',
+            'route'       => 'home',
+            'active'      => ['/home']
             // 'label'       => 4,
             // 'label_color' => 'success',
-            
+
         ],
         ['header' => 'Proveedores'],
         [
@@ -263,16 +264,22 @@ return [
                 [
                     'text' => 'Registro de proveedores',
                     'icon' => 'nav-icon fas fa-user-friends',
-                    'url'  => '#',
+                    'route' => 'proveedor.index',
+                    'can' => '',
+                    'active' => ['/proveedor/*']
+
                 ],
-                
+
                 [
-                    'text' => 'Pagos',
-                    'icon' => 'nav-icon fas fa-money-bill-alt',
-                    'url'  => '#',
+                    'text' => 'Acopio',
+                    'icon' => 'nav-icon fas fa-file-signature',
+                   
+                    'route'  => 'pago.index',
+
                 ],
             ],
         ],
+
         ['header' => 'Control'],
         // [
         //     'text' => 'Almacén',
@@ -324,6 +331,13 @@ return [
                 ],
             ],
         ],
+
+        ['header' => 'Reportes'],
+        [
+            'text' => 'Reportes',
+            'icon' => 'nav-icon fas fa-file',
+            'route'  => 'descargar',
+        ],
         ['header' => 'Ajustes'],
         [
             'text'    => 'Config. del sistema',
@@ -334,7 +348,7 @@ return [
                     'icon' => 'nav-icon fas fa-users',
                     'url'  => '#',
                 ],
-                
+
                 [
                     'text' => 'Backup DB',
                     'icon' => 'nav-icon fas fa-database',
@@ -358,6 +372,7 @@ return [
         //     'icon_color' => 'cyan',
         //     'url'        => '#',
         // ],
+
     ],
 
     /*
@@ -395,8 +410,9 @@ return [
     */
 
     'plugins' => [
+        
         'Datatables' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -431,7 +447,7 @@ return [
             ],
         ],
         'Chartjs' => [
-            'active' => false,
+            'active' => true,
             'files' => [
                 [
                     'type' => 'js',
@@ -462,6 +478,38 @@ return [
                     'type' => 'js',
                     'asset' => false,
                     'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+
+        'Ionic' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js',
+                ],
+            ],
+        ],
+
+        'Chart' => [
+            'active' => true,
+            'files' => [
+                [
+                    'type' => 'css',
+                    'asset' => true,
+                    'location' => 'vendor/chart.js/Chart.min.css',
+                ],
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/chart.js/Chart.min.js',
                 ],
             ],
         ],
