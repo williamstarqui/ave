@@ -27,7 +27,7 @@
             <th>Acopio dia 12</th>
             <th>Acopio dia 13</th>
             <th>Acopio dia 14</th>
-            <th>Acopio dia 15</th>
+            <th>Acopio dia 15o</th>
             {{-- <th>Fecha acopio</th> --}}
             <th>Precio</th>
             {{-- <th colspan="2">Opciones</th> --}}
